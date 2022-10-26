@@ -43,6 +43,7 @@ while (play) {
 
 //gameDecisons
 function gamelogics(userData) {
+	userData.trim();
 	computerDecision === userData
 		? (gameWinner = `it's a tire: computer:  ${computerDecision} PlayerOne: ${userData}`)
 		: userData === "rock" && computerDecision === "paper"
