@@ -24,18 +24,7 @@ while (play) {
 			let playAgain = confirm("Lets play again?");
 			if (playAgain) {
 				//if you want to play again, will test userdata and logic once more;
-				if (
-					userData === "rock" ||
-					userData === "paper" ||
-					userData === "scissors"
-				) {
-					prompt("Please enter Rock,paper or Scissors");
-					getComputerData();
-					//afterComputersChoice, decide the winner/ gamelogics
-					gamelogics(userData);
-				}
-				// location.reload();
-				continue;
+				location.reload();
 			} else {
 				later();
 			}
@@ -55,19 +44,18 @@ while (play) {
 //gameDecisons
 function gamelogics(userData) {
 	computerDecision === userData
-		? (gameWinner = `it's a tire: computer:  ${computerDecision} 
-		PlayerOne: ${userData}`)
-		: userData === "paper" && computerDecision === "scissors"
+		? (gameWinner = `it's a tire: computer:  ${computerDecision} PlayerOne: ${userData}`)
+		: userData === "rock" && computerDecision === "paper"
 		? (gameWinner = `computer Wins by: ${computerDecision} 
 		PlayerOne: ${userData}`)
 		: userData === "scissors" && computerDecision === "rock"
 		? (gameWinner = `computer Wins: ${computerDecision} 
 		playerOne: ${userData}`)
-		: userData === "paper" && computerDecision === "rock"
+		: userData === "paper" && computerDecision === "scissors"
 		? (gameWinner = ` computer Wins by: ${computerDecision} 
 		playerOne: ${userData}`)
 		: (gameWinner = `playerOne Wins: ${userData} 
-		computer: ${userData}`);
+		computer: ${computerDecision}`);
 	alert(gameWinner);
 	// return gameWinner;
 }
