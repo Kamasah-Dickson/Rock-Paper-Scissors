@@ -8,9 +8,9 @@ if (!play) {
 }
 
 while (play) {
-	let userData = prompt("Please enter Rock,paper or Scissors");
+	let userData = prompt("Please enter Rock,paper or Scissors").trim().toLowerCase();
 	if (userData) {
-		userData.trim();
+		userData.trim().toLowerCase();
 		//check if user data is rock, papaper of scissors if true getComputerChoice;
 		if (
 			userData === "rock" ||
@@ -43,7 +43,7 @@ while (play) {
 
 //gameDecisons
 function gamelogics(userData) {
-	userData.trim();
+	userData.trim().toLowerCase();
 	computerDecision === userData
 		? (gameWinner = `it's a tire: computer:  ${computerDecision} PlayerOne: ${userData}`)
 		: userData === "rock" && computerDecision === "paper"
